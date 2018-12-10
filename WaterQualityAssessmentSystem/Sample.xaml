@@ -1,0 +1,234 @@
+﻿<UserControl
+    x:Class="WQAS.Sample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WQAS"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="830"
+    Height="570"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    mc:Ignorable="d">
+
+
+    <!--  A PROGRAM CREATED BY FHRANZ ALIMORONG  -->
+    <!--  Project (Inventory System) for COE181P  -->
+    <!--  (c) June 2017  -->
+
+
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Image
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Margin="-20,20,612,240"
+            Source="Images/logo_inventory.png"
+            Stretch="Uniform" />
+
+        <!--  Note: StackPanel for Labels  -->
+
+        <!--  Note: StackPanel for TextBoxes  -->
+        <!--
+        <StackPanel
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Width="175"
+            Height="333"
+            Margin="25,42,0,100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <TextBox
+                x:Name="txtItemCode"
+                Width="150"
+                Height="40"
+                Margin="4,5"
+                HorizontalAlignment="Center"
+                materialDesign:HintAssist.Hint="Item Code"
+                IsEnabled="False"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                x:Name="txtItemName"
+                Width="150"
+                Height="40"
+                Margin="4,5"
+                HorizontalAlignment="Center"
+                materialDesign:HintAssist.Hint="Item Name"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                x:Name="txtItemCategory"
+                Width="150"
+                Height="40"
+                Margin="12,10,13,10"
+                HorizontalAlignment="Center"
+                materialDesign:HintAssist.Hint="Item Category"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                x:Name="txtItemQuantity"
+                Width="150"
+                Height="40"
+                Margin="4"
+                HorizontalAlignment="Center"
+                materialDesign:HintAssist.Hint="Item Quantity"
+                PreviewTextInput="NumberValidationTextBox"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                x:Name="txtItemPrice"
+                Width="150"
+                Height="40"
+                Margin="4,10"
+                HorizontalAlignment="Center"
+                materialDesign:HintAssist.Hint="Item Price"
+                PreviewTextInput="NumberValidationTextBox"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox
+                x:Name="txtItemManufacturer"
+                Width="150"
+                Height="40"
+                Margin="4,5"
+                HorizontalAlignment="Center"
+                materialDesign:HintAssist.Hint="Item Manufacturer"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+        </StackPanel>-->
+
+        <!--  NOTE: StackPanel for DataGrid  -->
+        <StackPanel
+            Grid.RowSpan="3"
+            Grid.Column="2"
+            Width="565"
+            Height="Auto"
+            Margin="37,71,20,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top" />
+
+        <TextBlock
+            Name="txtLEDStatus"
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="169"
+            Height="94"
+            Margin="382,10,71,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="Black"
+            FontSize="20"
+            Foreground="White">
+            LED is now OFF
+        </TextBlock>
+        <!--  NOTE: StackPanel for Buttons  -->
+
+        <Button
+            x:Name="btnSample"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="73,251,313,33"
+            Background="Yellow"
+            BorderBrush="AntiqueWhite"
+            BorderThickness="1"
+            Click="btnSample_Click">
+            <Grid>
+                <Image
+                    Width="80"
+                    Height="80"
+                    Margin="0,-10,0,0"
+                    VerticalAlignment="Top"
+                    Source="Images\logo_inventory.png" />
+                <TextBlock
+                    Margin="19,46,15,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    FontSize="20"
+                    Foreground="Black">
+                    LED ON/OFF
+                </TextBlock>
+            </Grid>
+        </Button>
+
+        <Button
+            x:Name="btnOpenConnection"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="15,42,357,84"
+            Background="Green"
+            BorderBrush="AntiqueWhite"
+            BorderThickness="1"
+            Click="btnOpenConnection_Click">
+            <Grid>
+                <!--<Image
+                    Width="80"
+                    Height="80"
+                    Margin="0,-10,0,0"
+                    VerticalAlignment="Top"
+                    Source="Images\logo_inventory.png" />-->
+                <TextBlock
+                    Margin="19,46,15,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    FontSize="20"
+                    Foreground="White">
+                    Open Connection
+                </TextBlock>
+            </Grid>
+        </Button>
+
+        <Button
+            x:Name="btnCloseConnection"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="305,42,71,84"
+            Background="Red"
+            BorderBrush="AntiqueWhite"
+            BorderThickness="1"
+            Click="btnCloseConnection_Click">
+            <Grid>
+                <!--<Image
+                    Width="80"
+                    Height="80"
+                    Margin="0,-10,0,0"
+                    VerticalAlignment="Top"
+                    Source="Images\logo_inventory.png" />-->
+                <TextBlock
+                    Margin="19,46,15,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    FontSize="20"
+                    Foreground="White">
+                    Close Connection
+                </TextBlock>
+            </Grid>
+        </Button>
+        <TextBlock
+            x:Name="txtTemp"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Width="169"
+            Height="94"
+            Margin="49,10,612,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="Black"
+            FontSize="20"
+            Foreground="White" />
+
+    </Grid>
+</UserControl>
